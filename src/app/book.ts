@@ -8,4 +8,3 @@ export interface Book {
     description?: string;
     cover?: string;
 }
-

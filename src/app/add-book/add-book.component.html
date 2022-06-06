@@ -1,0 +1,53 @@
+<div class="container">
+    <h2>Add new book </h2>
+    <form [formGroup]="addBookForm" (ngSubmit)="addBook()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" required class="form-control" id="title" formControlName="title">
+        </div>
+        <div class="error" *ngIf="title.invalid && (title.dirty || title.touched)">
+            Title is required.
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input required type="text" class="form-control" id="author" formControlName="author">
+        </div>
+         <div class="error" *ngIf="author.invalid && (author.dirty || author.touched)">
+            Author is required.
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input required type="number" class="form-control" id="price" formControlName="price">
+        </div>
+         <div class="error" *ngIf="price.invalid && (price.dirty || price.touched)">
+            Price is required.
+        </div>
+        <div class="form-group">
+            <label for="language">Language</label>
+            <input required type="text" class="form-control" id="language" formControlName="language">
+        </div>
+         <div class="error" *ngIf="language.invalid && (language.dirty || language.touched)">
+            Language is required.
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input required type="text" class="form-control" id="genre" formControlName="genre">
+        </div>
+         <div class="error" *ngIf="genre.invalid && (genre.dirty || genre.touched)">
+            Genre is required.
+        </div>
+        <div class="form-group">
+            <label for="cover">Cover Image</label>
+            <input required type="text" class="form-control" id="cover" formControlName="cover">
+        </div>
+         <div class="error" *ngIf="cover.invalid && (cover.dirty || cover.touched)">
+            Cover Image is required.
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" formControlName="description"></textarea>
+        </div>
+        <button type="submit" class="btn-green">Submit</button>
+    </form>
+
+</div>

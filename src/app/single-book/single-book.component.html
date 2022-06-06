@@ -4,13 +4,55 @@
             <img src="{{book.cover}}" class="cover" alt="">
         </div>
         <div>
-            <button (click)="goBack()">Back</button>
-            <h2 class="title">{{book.title}}</h2>
-            <p>{{book.author}}</p>
-            <p>{{book.price}}</p>
-            <p>{{book.language}}</p>
-            <p>{{book.genre}}</p>
-            <p>{{book.description}}</p>
+            <div>
+                <div class="btn-group" *ngIf="!editBook">
+                    <button (click)="goBack()">Back</button>
+                    <button (click)="toggleEdit()">Edit</button>
+                    <button (click)="deleteBook()" class="btn-red">Delete</button>
+                </div>
+                <div class="btn-group" *ngIf="editBook">
+                    <button (click)="toggleEdit()">Cancel</button>
+                    <button (click)="save()">Update</button>
+                </div>
+                <h2 class="title">{{book.title}}</h2>
+                <p>{{book.author}}</p>
+                <p>{{book.price}}</p>
+                <p>{{book.language}}</p>
+                <p>{{book.genre}}</p>
+                <p>{{book.description}}</p>
+            </div>
+
+            <div *ngIf="editBook">
+                <h2>Edit Book Details</h2>
+                <div>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" [(ngModel)]="book.title">
+                </div>
+                <!-- generate form inputs for other fields -->
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" [(ngModel)]="book.author">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" [(ngModel)]="book.price">
+                </div>
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <input type="text" class="form-control" id="language" [(ngModel)]="book.language">
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <input type="text" class="form-control" id="genre" [(ngModel)]="book.genre">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" [(ngModel)]="book.description"></textarea>
+                </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

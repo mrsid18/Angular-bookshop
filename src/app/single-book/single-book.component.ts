@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class SingleBookComponent implements OnInit {
 
   book: Book | undefined;
+  editBook: boolean = false;
 
   constructor(
     private bookService: BookService,
@@ -25,6 +26,18 @@ export class SingleBookComponent implements OnInit {
 
   goBack(): void {
     this.Location.back();
+  }
+
+  save(): void {
+    if(this.book) this.bookService.updateBook(this.book).subscribe(() => this.toggleEdit());
+  }
+
+  toggleEdit(): void {
+    this.editBook = !this.editBook;
+  }
+
+  deleteBook(): void {
+    if (this.book) this.bookService.deleteBook(this.book.id).subscribe(() => this.goBack());
   }
 
   getBook(): void {
