@@ -5,3 +5,16 @@
     grid-auto-rows: minmax(100px, auto);
 }
 
+.addBookBtn{
+    position:fixed;
+	bottom:40px;
+    text-decoration: none;
+    padding: 1rem;
+	right:40px;
+	background-color:red;
+    border-radius: 5px;
+    font-weight: bold;
+	color:#FFF;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}

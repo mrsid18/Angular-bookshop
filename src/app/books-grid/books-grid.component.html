@@ -1,5 +1,6 @@
 <div class="container">
     <div class="grid">
         <app-book-card *ngFor="let book of books" [book]="book"></app-book-card>
+        <a routerLink="/add-book" class="addBookBtn">Add New Book</a>
     </div>
 </div>
