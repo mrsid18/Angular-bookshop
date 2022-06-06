@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BooksGridComponent } from './books-grid/books-grid.component';
 
 @Component({
   selector: 'app-root',

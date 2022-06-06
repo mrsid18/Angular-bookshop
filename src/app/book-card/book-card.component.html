@@ -1,0 +1,5 @@
+<div *ngIf="book" class="card">
+    <img src="{{book.cover}}" class="cover" alt="">
+    <h2 class="title"><a routerLink="/book/{{book.id}}">{{book.title}}</a></h2>
+    <p class="price">{{book.price | currency }}</p>
+</div>
